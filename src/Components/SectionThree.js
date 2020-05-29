@@ -29,19 +29,11 @@ const useStyles = makeStyles((theme: Theme) =>
       background: "black",
       overflow: "hidden",
       background: "#4fb9c5",
-      height: "50vh",
-      marginTop: "16px",
+      marginTop: "16px"
     },
     gridContain: {
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'center',
-      alignItems: 'center',
-
-      ['@media (min-width:780px)']: {
-        display: 'flex',
-        flexDirection: 'row',
-    }
+      ["@media (min-width:780px)"]: {
+      }
     },
     about: {
       fontFamily: "'Noto Sans', sans-serif",
@@ -54,31 +46,31 @@ const useStyles = makeStyles((theme: Theme) =>
       marginTop: "8px"
     },
     overLay: {
-      width: 200,
-      ['@media (min-width:780px)']:{
-        width: 500,
+      width: "100%",
+      ["@media (min-width:780px)"]: {
+        width: "100%",
         backgroundColor: "#fff",
         opacity: "0.7",
         float: "right",
-        marginTop: "32px"
+        height: "100%"
       }
     },
     top: {
       float: "right"
     },
     pic: {
-      width: 300,
-      ['@media (min-width:780px)']:{
-        backgroundColor: "#4fb9c5",
-      height: "40vh",
-      justifyContent: "space-evenly",
+      width: "100%",
       backgroundImage:
-        "url('https://i.ytimg.com/vi/jGVDyrLNRKk/maxresdefault.jpg')",
+          "url('https://i.ytimg.com/vi/jGVDyrLNRKk/maxresdefault.jpg')",
       backgroundSize: "cover",
       opacity: "0.7",
-      width: "70%",
-      marginTop: "16px",
-      float: "left",
+      ["@media (min-width:780px)"]: {
+        justifyContent: "space-evenly",
+        backgroundImage:
+          "url('https://i.ytimg.com/vi/jGVDyrLNRKk/maxresdefault.jpg')",
+        backgroundSize: "cover",
+        opacity: "0.7",
+        float: "left",
       }
     }
   })
@@ -119,8 +111,7 @@ export default function SectionThree() {
               </CardContent>
             </Card>
           </Grid>
-          <Grid item xs={6}>
-            <Container className={classes.pic}></Container>
+          <Grid item xs={6} className={classes.pic}>
           </Grid>
         </Grid>
       </Container>

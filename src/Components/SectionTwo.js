@@ -34,7 +34,6 @@ const useStyles = makeStyles((theme: Theme) =>
         flexDirection: 'column',
         paddingLeft: '0px !important',
         paddingRight: '0px !important',
-
         ['@media (min-width:780px)']: {
             display: 'flex',
             flexDirection: 'row',
@@ -46,6 +45,9 @@ const useStyles = makeStyles((theme: Theme) =>
         textAlign: 'center',
         marginTop: '16px',
         marginBottom: '16px',
+    },
+    topCard: {
+      display: 'flex',
     }
   })
 );
@@ -83,7 +85,10 @@ export default function SectionTwo() {
         {foodMenu.map((item) => {
             return (
             <Card className={classes.root}>
-              <CardHeader title={item.name} />
+             <Container className={classes.topCard}>
+             <CardHeader title={item.name} />
+             <CardHeader title={item.price} />
+             </Container>
               <CardMedia
                 className={classes.media}
                 title="Paella dish"

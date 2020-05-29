@@ -2,7 +2,9 @@ import React from "react";
 import NavBar from "./Components/NavBar";
 import SectionOne from "./Components/SectionOne";
 import SectionTwo from "./Components/SectionTwo";
-import SectionThree from './Components/SectionThree'
+import SectionThree from './Components/SectionThree';
+import Footer from './Components/Footer';
+
 
 function App() {
   return (
@@ -11,6 +13,7 @@ function App() {
       <SectionOne />
       <SectionTwo />
       <SectionThree />
+      <Footer />
     </React.Fragment>
   );
 }
