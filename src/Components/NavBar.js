@@ -60,7 +60,7 @@ export default function ButtonAppBar() {
 
           </IconButton>
           <Typography variant="h6" className={classes.title}>
-            Fisherman Chips
+            Fisherman
           </Typography>
         </Toolbar>
       </AppBar>

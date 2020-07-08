@@ -4,7 +4,7 @@ import SectionOne from "./Components/SectionOne";
 import SectionTwo from "./Components/SectionTwo";
 import SectionThree from './Components/SectionThree';
 import Footer from './Components/Footer';
-
+import {FoodPage} from './Data/FoodData';
 
 function App() {
   return (
@@ -13,6 +13,7 @@ function App() {
       <SectionOne />
       <SectionTwo />
       <SectionThree />
+      <FoodPage />
       <Footer />
     </React.Fragment>
   );
