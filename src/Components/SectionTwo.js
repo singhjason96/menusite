@@ -13,6 +13,7 @@ import {
 import Container from "@material-ui/core/Container";
 import { createStyles, makeStyles, Theme, createMuiTheme } from "@material-ui/core/styles";
 import { foodData } from "../Data/FoodData";
+import firebase from '../Data/Firebase';
 
 const theme = createMuiTheme({
     spacing: 4,
@@ -59,6 +60,10 @@ export default function SectionTwo() {
   ]);
 
   useEffect(() => {
+    const ref = firebase.database().ref('/items/')
+    ref.on('value', snapshot => {
+      console.log("snapshot", snapshot.val())
+    })
     var foodList = [];
     foodData.map(food => {
       var foodName = food.name;
