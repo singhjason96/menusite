@@ -8,9 +8,10 @@ import {
   FormControlLabel, 
   Button
 } from "@material-ui/core";
+import firebase from './Firebase'
 
 export const FoodPage = () => {
-  var [data, setData] = useState([{itemName: '', price: 0}]);
+  var [data, setData] = useState([]);
   var [name, setName] = useState('');
   var [price, setPrice] = useState(0)
 
@@ -25,13 +26,18 @@ export const FoodPage = () => {
 
   
   const onSubmit = () => {
-    foodData.push({itemName: name, price: price})
+    foodData.push({itemName: name, itemPrice: price})
     setData(foodData)
-    console.log(foodData)
+    firebase.database()
+    .ref(`items/${new Date().getTime()}`)
+    .set({
+      itemName: name,
+      itemPrice: price
+    })
   }
-  console.log("data", data)
 
-  console.log("foodData", foodData)
+  console.log("item name", name)
+  console.log("this is the food data", data)
 
 
 
