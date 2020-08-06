@@ -9,6 +9,7 @@ import {
   CardMedia,
   CardHeader,
   Paper,
+  CardActionArea,
 } from "@material-ui/core";
 import Container from "@material-ui/core/Container";
 import {
@@ -30,6 +31,7 @@ const useStyles = makeStyles((theme: Theme) =>
       width: 355,
       height: 355,
       margin: theme.spacing(1),
+      textAlign: "center",
     },
     media: {
       height: 140,
@@ -48,11 +50,28 @@ const useStyles = makeStyles((theme: Theme) =>
       fontSize: "1.8rem",
       fontFamily: "'Noto Sans', sans-serif",
       textAlign: "center",
-      marginTop: "16px",
-      marginBottom: "16px",
     },
     topCard: {
       display: "flex",
+    },
+    flexStyle: {
+      display: "flex",
+      flexDirection: 'column',
+      ["@media (min-width:780px)"]: {
+        display: "flex",
+        flexDirection: "row",
+      },
+    },
+    textStyle: {
+      fontFamily: "'Noto Sans', sans-serif",
+      fontSize: "1.5rem",
+    },
+    picStyle: {
+      width: "200px",
+      height: "200px",
+    },
+    cardStyle: {
+      height: "200px",
     },
   })
 );
@@ -80,16 +99,21 @@ export default function SectionTwo() {
       {itemTitles.map((el) => {
         return (
           <>
-            <Typography>{el}</Typography>
-            <Container>
+            <Typography align="center" variant="h4" className={classes.title}>
+              {el}
+            </Typography>
+            <Container className={classes.flexStyle}>
               {foodMenu.map((item) => {
-                console.log(item.itemPic)
                 return (
                   el === item.itemTitle && (
-                    <Card xs={3}>
-                      <Typography variant="h5">{item.itemName}</Typography>
-                      <CardMedia image={item.itemPic}/>
-                      <CardContent>${item.itemPrice}</CardContent>
+                    <Card className={classes.root}>
+                      <CardContent className={classes.textStyle}>
+                        <Typography variant="h5" gutterBottom>
+                          {item.itemName}
+                        </Typography>
+                        <img src={item.itemPic} className={classes.cardStyle} />
+                        <Typography> ${item.itemPrice} </Typography>
+                      </CardContent>
                     </Card>
                   )
                 );

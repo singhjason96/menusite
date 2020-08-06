@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
 export const FoodPage = () => {
   var [data, setData] = useState([]);
   var [name, setName] = useState("");
-  var [price, setPrice] = useState(0);
+  var [price, setPrice] = useState();
   var [title, setTitle] = useState("");
   var [pic, setPic] = useState("");
   const classes = useStyles();
@@ -72,7 +72,7 @@ export const FoodPage = () => {
           >
             <MenuItem value={"Beverage"}>Beverages</MenuItem>
             <MenuItem value={"Fish"}>Fish</MenuItem>
-            <MenuItem vale={"Other"}>Other</MenuItem>
+            <MenuItem value={"Other"}>Other</MenuItem>
           </Select>
         </FormControl>
         <FormControl margin="normal" required fullWidth>
