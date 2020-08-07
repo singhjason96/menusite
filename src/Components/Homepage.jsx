@@ -11,7 +11,6 @@ const HomePage = () => {
       <NavBar />
       <SectionOne />
       <SectionTwo />
-      <SectionThree />
       <Footer />
     </>
   );
