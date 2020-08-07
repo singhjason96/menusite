@@ -44,23 +44,8 @@ export default function ButtonAppBar() {
     <div className={classes.root}>
       <AppBar position="static" className={classes.header}>
         <Toolbar>
-          <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-            <MenuIcon onClick={handleClick}/>
-            <Menu
-            id="simple-menu"
-            anchorEl={anchorEl}
-            keepMounted
-            open={Boolean(anchorEl)}
-            onClose={handleClose}
-          >
-          <MenuItem onClick={handleClose}>Contact Us</MenuItem>
-          <MenuItem onClick={handleClose}>About Us</MenuItem>
-          <MenuItem onClick={handleClose}>Our Menu</MenuItem>
-          </Menu>
-
-          </IconButton>
           <Typography variant="h6" className={classes.title}>
-            Fisherman
+            Major's Fish & Chips
           </Typography>
         </Toolbar>
       </AppBar>
